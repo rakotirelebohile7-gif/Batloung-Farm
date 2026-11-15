@@ -134,7 +134,7 @@ function App() {
               </div>
             </div>
 
-            <div className="panel batloung-map-card" style={{ marginTop: '24px' }}><div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '12px' }}><div><h3 style={{ margin: 0, fontSize: '18px' }}>Maseru Distribution Hub &amp; SA Orchard Corridor</h3><p style={{ margin: '4px 0 0', fontSize: '13px', color: '#666' }}>Central Maseru Wholesale Depot &bull; Maseru Bridge Border &bull; Free State, Limpopo &amp; Mpumalanga Supply Routes</p></div><span style={{ fontSize: '12px', fontWeight: 700, padding: '5px 10px', borderRadius: '3px', background: '#eef5ee', color: '#1b7a3d' }}>Active Cold-Chain Corridor</span></div><iframe title="Batloung Farm Maseru Location Map" width="100%" height="290" style={{ border: '1px solid #e0e0e0', borderRadius: '4px', display: 'block' }} loading="lazy" src="https://openstreetmap.org" /></div>
+            <div className="panel batloung-map-card" style={{ marginTop: '24px' }}><div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '12px' }}><div><h3 style={{ margin: 0, fontSize: '18px' }}>Maseru Distribution Hub &amp; SA Orchard Corridor</h3><p style={{ margin: '4px 0 0', fontSize: '13px', color: '#666' }}>Central Maseru Wholesale Depot &bull; Maseru Bridge Border &bull; Free State, Limpopo &amp; Mpumalanga Supply Routes</p></div><span style={{ fontSize: '12px', fontWeight: 700, padding: '5px 10px', borderRadius: '3px', background: '#eef5ee', color: '#1b7a3d' }}>Active Cold-Chain Corridor</span></div><iframe title="Batloung Farm Maseru Location Map" width="100%" height="290" style={{ border: '1px solid #e0e0e0', borderRadius: '4px', display: 'block' }} loading="lazy" src="https://openstreetmap.org&layer=mapnik&marker=-29.3151%2C27.4869" /></div>
             <div className="kpi-grid">
               <div className="kpi-card">
                 <div className="kpi-label">Total Sales Revenue</div>
@@ -230,6 +230,7 @@ function App() {
   );
 }
 export default App;
+
 
 
 
