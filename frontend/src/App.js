@@ -100,20 +100,37 @@ function App() {
         <nav className="nav-tabs">{[{ id: 'dashboard', label: 'Dashboard' }, { id: 'stock', label: 'Stock & Shop' }, { id: 'suppliers', label: 'Suppliers' }, { id: 'vendors', label: 'Vendors' }, { id: 'reports', label: 'Reports' }].map(t => <button key={t.id} className={`nav-btn ${tab === t.id ? 'active' : ''}`} onClick={() => switchTab(t.id)}>{t.label}</button>)}</nav>
       </header>
       <main className="container">
-        {lowStock.length > 0 && <div className="alert-banner"><strong>Low Stock Alert:</strong> {lowStock.map(l => `${l.fruit_name} (${l.packaging_size}: ${l.available_quantity} boxes)`).join(' • ')}</div>}
-                {tab === 'dashboard' && (
+        <div className="top-client-hero"><div className="top-client-inner"><div><h1>Fresh Farm Produce Delivered Across Lesotho</h1><p>Welcome to Batloung Farm &mdash; supplying Maseru &amp; Lesotho vendors with crisp apples, bananas, oranges, grapes, and mangoes in Small, Medium, and Large wholesale boxes.</p></div><button className="top-client-btn" onClick={() => setModal('quickOrder')}>Order Wholesale Boxes</button></div></div>
+        {lowStock.length > 0 && <div className="alert-banner"><strong>Low Stock Alert:</strong> {lowStock.map(l => `${l.fruit_name} (${l.packaging_size}: ${l.available_quantity} boxes)`).join('  |  ')}</div>}
+                                {tab === 'dashboard' && (
           <>
-            <div className="dash-hero-card">
-              <div className="dash-hero-left">
-                <img className="dash-hero-img" src="https://unsplash.com" alt="Batloung Farm Tropical Fruit Basket" />
-                <div>
-                  <h2 style={{ fontSize: '20px', color: '#222', marginBottom: '4px' }}>Batloung Farm Executive Overview</h2>
-                  <p style={{ fontSize: '13px', color: '#666' }}>Maseru Distribution Hub • Fresh South African &amp; Tropical Produce</p>
-                </div>
+            <div className="portal-strip">
+              <div className="portal-item" onClick={() => switchTab('vendors')}>
+                <div className="portal-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+                <div><strong>For Lesotho Vendors</strong><div style={{ fontSize: '13px', color: '#666' }}>Vendor Order &amp; Credit Portal</div></div>
               </div>
-              <div className="filter-group">
-                <button className="btn-outline" onClick={() => setModal('purchase')}>+ Record Purchase</button>
-                <button className="btn-primary" onClick={() => setModal('quickOrder')}>+ Record Vendor Sale</button>
+              <div className="portal-item" onClick={() => switchTab('suppliers')}>
+                <div className="portal-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="1.8"><rect x="1" y="6" width="14" height="10" rx="1"/><path d="M15 9h4l3 3v4h-7V9z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+                <div><strong>SA Farm Suppliers</strong><div style={{ fontSize: '13px', color: '#666' }}>Provincial Orchard Supply Portal</div></div>
+              </div>
+              <div className="portal-item" onClick={() => setModal('quickOrder')}>
+                <div className="portal-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg></div>
+                <div><strong>Dispatch Desk</strong><div style={{ fontSize: '13px', color: '#666' }}>orders@batloungfarm.co.ls</div></div>
+              </div>
+            </div>
+
+            <div className="cat-grid">
+              <div className="cat-card" onClick={() => setModal('quickOrder')}>
+                <img className="cat-img" src={require('./my-fruites.jpg')} alt="Wholesale Crates" />
+                <div className="cat-label">Wholesale Crates</div>
+              </div>
+              <div className="cat-card" onClick={() => switchTab('stock')}>
+                <img className="cat-img" src={require('./vendor-bg.jpeg')} alt="Fresh Fruits" />
+                <div className="cat-label">Fresh Fruits</div>
+              </div>
+              <div className="cat-card" onClick={() => setModal('purchase')}>
+                <img className="cat-img" src={require('./tropical-right.png')} alt="Tropical Harvest" />
+                <div className="cat-label">Tropical Harvest</div>
               </div>
             </div>
 
@@ -212,6 +229,31 @@ function App() {
   );
 }
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
