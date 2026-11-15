@@ -89,3 +89,12 @@ th { background: #fafafa; font-weight: 700; }
 .dash-hero-card { display: flex; justify-content: space-between; align-items: center; gap: 24px; background: #fafafa; border: 1px solid #e6e6e6; border-left: 4px solid #c84b26; border-radius: 4px; padding: 20px 26px; margin-bottom: 24px; flex-wrap: wrap; }
 .dash-hero-left { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .dash-hero-img { width: 130px; height: 110px; object-fit: cover; border-radius: 4px; border: 1px solid #e0e0e0; background: #fff; }
+body {
+  background: linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.78)), url('/bg-basket.png') no-repeat center center fixed !important;
+  background-size: cover !important;
+  min-height: 100vh;
+}
+.navbar, .panel, .kpi-card, .product-card, .toolbar, .dash-hero-card {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(6px);
+}
