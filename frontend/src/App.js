@@ -44,25 +44,18 @@ function App() {
       if (venRes.success) setVendors(venRes.data); if (repRes.success) setReports(repRes.data);
     } catch { notify('Backend offline on port 5000', true); }
   };
-    const [themeIdx, setThemeIdx] = useState(0);
-  const STUDIO_THEMES = [
-    'linear-gradient(135deg, #2b2d2f 0%, #c84b26 100%)',
-    'linear-gradient(135deg, #3a4a3c 0%, #d96b27 100%)',
-    'linear-gradient(135deg, #4a3525 0%, #b84220 100%)'
-  ];
-
   useEffect(() => {
     let intervalId;
     const t1 = setTimeout(() => {
-      setThemeIdx(1);
       intervalId = setInterval(() => {
-        setThemeIdx(prev => (prev + 1) % 3);
       }, 120000);
     }, 2000);
     return () => { clearTimeout(t1); if (intervalId) clearInterval(intervalId); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => { loadAll(); }, []);
+  useEffect(() => { loadAll(); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSupplierSubmit = async (e) => {
     e.preventDefault();
@@ -230,6 +223,7 @@ function App() {
   );
 }
 export default App;
+
 
 
 
