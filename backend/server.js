@@ -1,4 +1,4 @@
-const dbInit = require('./db');
+const mysqlInit = require('mysql2/promise'); const dbInit = mysqlInit.createPool({host:process.env.DB_HOST,port:process.env.DB_PORT||3306,user:process.env.DB_USER,password:process.env.DB_PASSWORD,database:process.env.DB_NAME});
 (async () => {
   try {
     await dbInit.query(`CREATE TABLE IF NOT EXISTS fruits (fruit_id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), category VARCHAR(50), unit VARCHAR(20), cost_price DECIMAL(10,2), selling_price DECIMAL(10,2))`);
@@ -20,4 +20,5 @@ const dbInit = require('./db');
   } catch (e) { console.error('DB init warning:', e.message); }
 })();
 const express = require('express'), cors = require('cors'); require('dotenv').config(); const app = express(); app.use(cors()); app.use(express.json()); app.use('/api', require('./routes/apiRoutes')); app.use(require('./middleware/errorHandler')); app.listen(5000, () => console.log('Batloung Farm API running on http://localhost:5000'));
+
 
