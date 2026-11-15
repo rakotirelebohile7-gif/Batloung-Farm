@@ -1,0 +1,1 @@
+const express = require('express'), cors = require('cors'); require('dotenv').config(); const app = express(); app.use(cors()); app.use(express.json()); app.use('/api', require('./routes/apiRoutes')); app.use(require('./middleware/errorHandler')); app.listen(5000, () => console.log('Batloung Farm API running on http://localhost:5000'));
