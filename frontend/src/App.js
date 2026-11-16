@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-const API = 'https://railway.app/api';
+const API = 'https://batloung-farm-production-23019dad.up.railway.app/api';
 const PROVINCES = ['Gauteng', 'Free State', 'KwaZulu-Natal', 'Western Cape', 'Eastern Cape', 'Limpopo', 'Mpumalanga', 'North West'];
 const SIZE_PRICES = { Small: 120, Medium: 220, Large: 350 };
 function App() {
@@ -223,6 +223,7 @@ function App() {
   );
 }
 export default App;
+
 
 
 
